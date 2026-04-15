@@ -149,9 +149,14 @@ box.appendChild(div);
 }
 
 function compare(val,guess){
-if(val===guess)return"correct";
-if(typeof val==="number" && Math.abs(val-guess)<=2)return"close";
-return"wrong";
+if(val===guess) return {class:"correct",text:guess};
+
+if(typeof val==="number"){
+if(guess<val) return {class:"close",text:guess+" ↑"};
+if(guess>val) return {class:"close",text:guess+" ↓"};
+}
+
+return {class:"wrong",text:guess};
 }
 
 function submitGuess(){
@@ -164,8 +169,15 @@ const row=document.createElement("tr");
 
 function addCell(value,status){
 const td=document.createElement("td");
+
+if(status && typeof status === "object"){
+td.textContent=status.text;
+td.className=status.class;
+}else{
 td.textContent=value;
-if(status)td.className=status;
+if(status) td.className=status;
+}
+
 row.appendChild(td);
 }
 
@@ -212,3 +224,4 @@ shareDiv.innerHTML="<h3>You got it! The golfer was "+mystery.name+"</h3><pre>"+s
 </script>
 </body>
 </html>
+
