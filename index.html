@@ -25,7 +25,6 @@ button{margin-top:10px;padding:10px 20px;font-size:16px;border:none;border-radiu
 .close{background:#f1c40f;color:black}
 .wrong{background:#7f8c8d}
 
-.tile{display:inline-block;padding:6px 10px;margin:2px;border-radius:4px;font-weight:bold}
 #share{margin-top:20px}
 </style>
 </head>
@@ -54,14 +53,13 @@ button{margin-top:10px;padding:10px 20px;font-size:16px;border:none;border-radiu
 </table>
 
 <div id="share"></div>
-
 </div>
 
 <script>
 
 const golfers=[
-{name:"Scottie Scheffler",country:"USA",age:28,height:75,hand:"R",majors:4,pro:2018},
-{name:"Rory McIlroy",country:"NIR",age:35,height:69,hand:"R",majors:5,pro:2007},
+{name:"Scottie Scheffler",country:"USA",age:28,height:75,hand:"R",majors:2,pro:2018},
+{name:"Rory McIlroy",country:"NIR",age:35,height:69,hand:"R",majors:4,pro:2007},
 {name:"Jon Rahm",country:"ESP",age:29,height:74,hand:"R",majors:2,pro:2016},
 {name:"Jordan Spieth",country:"USA",age:30,height:73,hand:"R",majors:3,pro:2012},
 {name:"Justin Thomas",country:"USA",age:31,height:70,hand:"R",majors:2,pro:2013},
@@ -79,54 +77,32 @@ const golfers=[
 {name:"Adam Scott",country:"AUS",age:43,height:72,hand:"R",majors:1,pro:2000},
 {name:"Rickie Fowler",country:"USA",age:35,height:69,hand:"R",majors:0,pro:2009},
 {name:"Max Homa",country:"USA",age:33,height:73,hand:"R",majors:0,pro:2013},
-{name:"Cameron Smith",country:"AUS",age:30,height:71,hand:"R",majors:1,pro:2013},
-{name:"Sam Burns",country:"USA",age:27,height:72,hand:"R",majors:0,pro:2017},
-{name:"Brian Harman",country:"USA",age:37,height:67,hand:"L",majors:1,pro:2009},
-{name:"Wyndham Clark",country:"USA",age:30,height:72,hand:"R",majors:1,pro:2017},
-{name:"Sungjae Im",country:"KOR",age:26,height:71,hand:"R",majors:0,pro:2018},
-{name:"Si Woo Kim",country:"KOR",age:28,height:71,hand:"R",majors:0,pro:2012},
-{name:"Keegan Bradley",country:"USA",age:37,height:75,hand:"R",majors:1,pro:2008},
-{name:"Jason Day",country:"AUS",age:36,height:72,hand:"R",majors:1,pro:2006},
-{name:"Cameron Young",country:"USA",age:27,height:74,hand:"R",majors:0,pro:2019},
-{name:"Russell Henley",country:"USA",age:34,height:72,hand:"R",majors:0,pro:2011},
-{name:"Corey Conners",country:"CAN",age:32,height:73,hand:"R",majors:0,pro:2015},
-{name:"Adam Hadwin",country:"CAN",age:36,height:68,hand:"R",majors:0,pro:2009},
-{name:"Nick Taylor",country:"CAN",age:35,height:70,hand:"R",majors:0,pro:2010},
-{name:"Sahith Theegala",country:"USA",age:26,height:75,hand:"R",majors:0,pro:2020},
-{name:"Tom Kim",country:"KOR",age:21,height:70,hand:"R",majors:0,pro:2018},
-{name:"Min Woo Lee",country:"AUS",age:25,height:71,hand:"R",majors:0,pro:2019},
-{name:"Sepp Straka",country:"AUT",age:31,height:75,hand:"R",majors:0,pro:2016},
-{name:"Tyrrell Hatton",country:"ENG",age:32,height:69,hand:"R",majors:0,pro:2011},
-{name:"Justin Rose",country:"ENG",age:43,height:74,hand:"R",majors:1,pro:1998},
-{name:"Billy Horschel",country:"USA",age:37,height:72,hand:"R",majors:0,pro:2009},
-{name:"Gary Woodland",country:"USA",age:39,height:73,hand:"R",majors:1,pro:2007},
-{name:"Webb Simpson",country:"USA",age:38,height:74,hand:"R",majors:1,pro:2008},
-{name:"Lucas Glover",country:"USA",age:44,height:74,hand:"R",majors:1,pro:2001},
-{name:"Chris Kirk",country:"USA",age:38,height:73,hand:"R",majors:0,pro:2007},
-{name:"Denny McCarthy",country:"USA",age:31,height:69,hand:"R",majors:0,pro:2015},
-{name:"Harris English",country:"USA",age:34,height:75,hand:"R",majors:0,pro:2011},
-{name:"Taylor Moore",country:"USA",age:30,height:71,hand:"R",majors:0,pro:2016},
-{name:"Eric Cole",country:"USA",age:35,height:69,hand:"R",majors:0,pro:2009},
-{name:"Alex Noren",country:"SWE",age:41,height:71,hand:"R",majors:0,pro:2005},
-{name:"Ludvig Aberg",country:"SWE",age:24,height:75,hand:"R",majors:0,pro:2023},
-{name:"Robert MacIntyre",country:"SCO",age:27,height:74,hand:"L",majors:0,pro:2017},
-{name:"Aaron Rai",country:"ENG",age:29,height:71,hand:"R",majors:0,pro:2012},
-{name:"Ryan Fox",country:"NZL",age:37,height:72,hand:"R",majors:0,pro:2012},
-{name:"Beau Hossler",country:"USA",age:29,height:72,hand:"R",majors:0,pro:2016},
-{name:"J.T. Poston",country:"USA",age:30,height:72,hand:"R",majors:0,pro:2015},
-{name:"Brendon Todd",country:"USA",age:38,height:69,hand:"R",majors:0,pro:2007},
-{name:"Mackenzie Hughes",country:"CAN",age:33,height:70,hand:"R",majors:0,pro:2011},
-{name:"Thomas Detry",country:"BEL",age:31,height:73,hand:"R",majors:0,pro:2016},
-{name:"Victor Perez",country:"FRA",age:31,height:78,hand:"R",majors:0,pro:2015},
-{name:"Matthieu Pavon",country:"FRA",age:31,height:72,hand:"R",majors:0,pro:2013}
+{name:"Cameron Smith",country:"AUS",age:30,height:71,hand:"R",majors:1,pro:2013}
 ];
 
-const todaySeed=new Date().toDateString();
-let seed=0;
-for(let i=0;i<todaySeed.length;i++){seed+=todaySeed.charCodeAt(i);} 
-const mystery=golfers[seed%golfers.length];
-
+let mystery;
 let guesses=[];
+let gameActive=true;
+let row;
+
+function feetInches(inches){
+let ft=Math.floor(inches/12);
+let inc=inches%12;
+let meters=(inches*2.54/100).toFixed(2);
+return ft+"'"+inc+"\" ("+meters+" m)";
+}
+
+function newGame(){
+const seed=Math.floor(Math.random()*golfers.length);
+mystery=golfers[seed];
+guesses=[];
+gameActive=true;
+document.getElementById("results").innerHTML=`<tr><th>Name</th><th>Country</th><th>Age</th><th>Height</th><th>Hand</th><th>Majors</th><th>Turned Pro</th></tr>`;
+document.getElementById("share").innerHTML="";
+document.getElementById("guessInput").value="";
+}
+
+newGame();
 
 function showSuggestions(){
 const input=document.getElementById("guessInput").value.toLowerCase();
@@ -134,63 +110,58 @@ const box=document.getElementById("suggestions");
 box.innerHTML="";
 if(!input)return;
 
-golfers
-.filter(g=>g.name.toLowerCase().includes(input))
-.forEach(g=>{
+golfers.filter(g=>g.name.toLowerCase().includes(input)).forEach(g=>{
 const div=document.createElement("div");
 div.className="suggestion";
 div.textContent=g.name;
-div.onclick=()=>{
-document.getElementById("guessInput").value=g.name;
-box.innerHTML="";
-};
+div.onclick=()=>{document.getElementById("guessInput").value=g.name;box.innerHTML="";};
 box.appendChild(div);
 });
 }
 
 function compare(val,guess){
-if(val===guess) return {class:"correct",text:guess};
-
 if(typeof val==="number"){
-if(guess<val) return {class:"close",text:guess+" ↑"};
-if(guess>val) return {class:"close",text:guess+" ↓"};
+let diff=Math.abs(val-guess);
+let arrow="";
+if(guess<val) arrow=" ↑";
+if(guess>val) arrow=" ↓";
+
+if(val===guess) return {class:"correct",text:guess};
+if(diff<=2) return {class:"close",text:guess+arrow};
+return {class:"wrong",text:guess+arrow};
 }
 
-return {class:"wrong",text:guess};
+return val===guess ? {class:"correct",text:guess}:{class:"wrong",text:guess};
 }
-
-function submitGuess(){
-const name=document.getElementById("guessInput").value;
-const guess=golfers.find(g=>g.name===name);
-if(!guess){alert("Select a golfer from the list");return}
-
-const table=document.getElementById("results");
-const row=document.createElement("tr");
 
 function addCell(value,status){
 const td=document.createElement("td");
-
-if(status && typeof status === "object"){
+if(status && typeof status==="object"){
 td.textContent=status.text;
 td.className=status.class;
 }else{
 td.textContent=value;
-if(status) td.className=status;
 }
-
 row.appendChild(td);
 }
+
+function submitGuess(){
+if(!gameActive)return;
+const name=document.getElementById("guessInput").value;
+const guess=golfers.find(g=>g.name===name);
+if(!guess)return alert("Select a golfer");
+
+row=document.createElement("tr");
 
 addCell(guess.name);
 addCell(guess.country,compare(mystery.country,guess.country));
 addCell(guess.age,compare(mystery.age,guess.age));
-addCell(guess.height,compare(mystery.height,guess.height));
+addCell(feetInches(guess.height),compare(mystery.height,guess.height));
 addCell(guess.hand,compare(mystery.hand,guess.hand));
 addCell(guess.majors,compare(mystery.majors,guess.majors));
 addCell(guess.pro,compare(mystery.pro,guess.pro));
 
-
-table.appendChild(row);
+document.getElementById("results").appendChild(row);
 
 guesses.push(row.innerHTML);
 
@@ -200,25 +171,24 @@ endGame();
 }
 
 function endGame(){
-let share="PGA Weddle " + guesses.length + "/∞\n";
+gameActive=false;
+let share="PGA Weddle\n";
 
 guesses.forEach(g=>{
-const div=document.createElement("div");
+let div=document.createElement("div");
 div.innerHTML=g;
-const cells=div.querySelectorAll("td");
-
+let cells=div.querySelectorAll("td");
 cells.forEach((c,i)=>{
 if(i===0)return;
-if(c.className==="correct")share+="🟩";
-else if(c.className==="close")share+="🟨";
+if(c.className=="correct")share+="🟩";
+else if(c.className=="close")share+="🟨";
 else share+="⬛";
 });
-
 share+="\n";
 });
 
-const shareDiv=document.getElementById("share");
-shareDiv.innerHTML="<h3>You got it! The golfer was "+mystery.name+"</h3><pre>"+share+"</pre>";
+let shareDiv=document.getElementById("share");
+shareDiv.innerHTML=`<h3>You got it! ${mystery.name}</h3><pre>${share}</pre><button onclick="newGame()">Play Unlimited</button>`;
 }
 
 </script>
